@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://d2qpwsf02d5eq"]
+
+[ext_resource type="Script" uid="uid://d04bikl01n0ki" path="res://scripts/platform.gd" id="1_dewqr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_056p1"]
+size = Vector3(8, 1, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dewqr"]
+albedo_color = Color(0.60547763, 0.41966343, 0.37995017, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ugnlc"]
+material = SubResource("StandardMaterial3D_dewqr")
+size = Vector3(8, 1, 20)
+
+[node name="Platform_2" type="StaticBody3D" unique_id=32998477]
+script = ExtResource("1_dewqr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1264001585]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+shape = SubResource("BoxShape3D_056p1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=792518528]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+mesh = SubResource("BoxMesh_ugnlc")
+
+[node name="next_spawn_point" type="Node3D" parent="." unique_id=1556773518]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)

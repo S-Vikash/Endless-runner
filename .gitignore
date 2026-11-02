@@ -1,0 +1,36 @@
+# Godot 4.2+ specific ignores
+~*.dll
+
+# Godot 4+ specific ignores
+.godot/
+.nomedia
+
+# Godot-specific ignores
+.import/
+export.cfg
+export_credentials.cfg
+
+*.tmp
+
+# Imported translations
+*.translation
+
+# Mono / C# specific ignores
+.mono/
+data_*/
+mono_crash.*.json
+
+# Export outputs
+*.exe
+
+# Uncomment if you don't want to track PCK files
+# *.pck
+
+# IDE
+.vscode/
+.idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+desktop.ini

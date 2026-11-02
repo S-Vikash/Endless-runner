@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cg1knbq6ql6o8"]
+
+[ext_resource type="Script" uid="uid://dd008nj3xa7of" path="res://scripts/deletion_zone.gd" id="1_5u71e"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4afsq"]
+size = Vector3(7.336426, 8.522949, 1)
+
+[node name="Deletion_zone" type="Area3D" unique_id=771847720]
+script = ExtResource("1_5u71e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1217316984]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022064209, 0.86206055, 0)
+shape = SubResource("BoxShape3D_4afsq")
