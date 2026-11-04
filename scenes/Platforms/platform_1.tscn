@@ -13,6 +13,7 @@ material = SubResource("StandardMaterial3D_4afsq")
 size = Vector3(8, 1, 20)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y5kva"]
+size = Vector3(10, 5, 0.6)
 
 [node name="Platform_1" type="StaticBody3D" unique_id=32998477]
 script = ExtResource("1_hcgsd")
@@ -29,6 +30,10 @@ mesh = SubResource("BoxMesh_4afsq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
 
 [node name="Spawn_Trigger" type="Area3D" parent="." unique_id=2092216932]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Spawn_Trigger" unique_id=1485036938]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0.20000076)
 shape = SubResource("BoxShape3D_y5kva")
+
+[connection signal="body_exited" from="Spawn_Trigger" to="." method="_on_spawn_trigger_body_exited"]

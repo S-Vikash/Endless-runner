@@ -4,7 +4,7 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_4afsq"]
 
-[node name="Player" type="CharacterBody3D" unique_id=1513978880]
+[node name="Player" type="CharacterBody3D" unique_id=1513978880 groups=["player"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=609981857]
 shape = SubResource("CapsuleShape3D_4afsq")

@@ -12,6 +12,9 @@ albedo_color = Color(0.3683634, 0.79895073, 0.4435502, 1)
 material = SubResource("StandardMaterial3D_t3wof")
 size = Vector3(8, 1, 20)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_t3wof"]
+size = Vector3(10, 5, 0.6)
+
 [node name="Platform_3" type="StaticBody3D" unique_id=32998477]
 script = ExtResource("1_t3wof")
 
@@ -25,3 +28,12 @@ mesh = SubResource("BoxMesh_l2m7k")
 
 [node name="next_spawn_point" type="Node3D" parent="." unique_id=1556773518]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
+
+[node name="Spawn_Trigger" type="Area3D" parent="." unique_id=935713776]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Spawn_Trigger" unique_id=481689895]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0.20000076)
+shape = SubResource("BoxShape3D_t3wof")
+
+[connection signal="body_exited" from="Spawn_Trigger" to="." method="_on_spawn_trigger_body_exited"]
