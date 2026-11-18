@@ -5,8 +5,91 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_uunyw"]
 size = Vector3(8, 1, 20)
 
+[sub_resource type="Gradient" id="Gradient_p3_albedo"]
+offsets = PackedFloat32Array(0, 0.048, 0.052, 0.06, 0.062, 0.088, 0.09, 0.098, 0.1, 0.322, 0.326, 0.338, 0.342, 0.432, 0.436, 0.444, 0.448, 0.552, 0.556, 0.564, 0.568, 0.658, 0.662, 0.674, 0.678, 0.9, 0.902, 0.91, 0.912, 0.938, 0.94, 0.948, 0.952, 1)
+colors = PackedColorArray(0.11, 0.16, 0.2, 1, 0.15, 0.22, 0.26, 1, 0.05, 0.08, 0.1, 1, 0.05, 0.08, 0.1, 1, 0.22, 0.95, 0.58, 1, 0.22, 0.95, 0.58, 1, 0.06, 0.1, 0.12, 1, 0.06, 0.1, 0.12, 1, 0.18, 0.32, 0.29, 1, 0.22, 0.38, 0.34, 1, 0.48, 0.88, 0.66, 1, 0.48, 0.88, 0.66, 1, 0.26, 0.45, 0.39, 1, 0.27, 0.47, 0.41, 1, 0.15, 0.26, 0.23, 1, 0.38, 0.76, 0.58, 1, 0.3, 0.52, 0.44, 1, 0.3, 0.52, 0.44, 1, 0.38, 0.76, 0.58, 1, 0.15, 0.26, 0.23, 1, 0.27, 0.47, 0.41, 1, 0.26, 0.45, 0.39, 1, 0.48, 0.88, 0.66, 1, 0.48, 0.88, 0.66, 1, 0.22, 0.38, 0.34, 1, 0.18, 0.32, 0.29, 1, 0.06, 0.1, 0.12, 1, 0.06, 0.1, 0.12, 1, 0.22, 0.95, 0.58, 1, 0.22, 0.95, 0.58, 1, 0.05, 0.08, 0.1, 1, 0.05, 0.08, 0.1, 1, 0.15, 0.22, 0.26, 1, 0.11, 0.16, 0.2, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_p3_albedo"]
+gradient = SubResource("Gradient_p3_albedo")
+width = 256
+height = 16
+
+[sub_resource type="Gradient" id="Gradient_p3_ao"]
+offsets = PackedFloat32Array(0, 0.72, 0.78, 0.84, 0.92, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.98, 0.98, 0.98, 1, 0.82, 0.82, 0.82, 1, 0.95, 0.95, 0.95, 1, 0.92, 0.92, 0.92, 1, 0.68, 0.68, 0.68, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_p3_ao"]
+gradient = SubResource("Gradient_p3_ao")
+width = 64
+height = 64
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 1)
+repeat = 1
+
+[sub_resource type="Gradient" id="Gradient_p3_detail"]
+offsets = PackedFloat32Array(0, 0.025, 0.04, 0.065, 0.485, 0.5, 0.515, 0.975, 1)
+colors = PackedColorArray(0.52, 0.58, 0.56, 1, 0.52, 0.58, 0.56, 1, 1, 1, 1, 1, 0.96, 0.98, 0.97, 1, 0.95, 0.97, 0.96, 1, 0.77, 0.82, 0.8, 1, 0.91, 0.94, 0.93, 1, 0.91, 0.94, 0.93, 1, 0.52, 0.58, 0.56, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_p3_detail"]
+gradient = SubResource("Gradient_p3_detail")
+width = 16
+height = 128
+fill_to = Vector2(0, 1)
+repeat = 1
+
+[sub_resource type="Gradient" id="Gradient_p3_norm"]
+offsets = PackedFloat32Array(0, 0.03, 0.055, 0.485, 0.5, 0.515, 0.945, 0.97, 1)
+colors = PackedColorArray(0.5, 0.78, 0.95, 1, 0.5, 0.22, 0.95, 1, 0.5, 0.5, 1, 1, 0.5, 0.5, 1, 1, 0.5, 0.35, 0.98, 1, 0.5, 0.5, 1, 1, 0.5, 0.5, 1, 1, 0.5, 0.78, 0.95, 1, 0.5, 0.78, 0.95, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_p3_norm"]
+gradient = SubResource("Gradient_p3_norm")
+width = 16
+height = 128
+fill_to = Vector2(0, 1)
+repeat = 1
+
+[sub_resource type="Gradient" id="Gradient_p3_rough"]
+offsets = PackedFloat32Array(0, 0.055, 0.06, 0.09, 0.1, 0.9, 0.91, 0.94, 0.945, 1)
+colors = PackedColorArray(0.3, 0.3, 0.3, 1, 0.3, 0.3, 0.3, 1, 0.18, 0.18, 0.18, 1, 0.18, 0.18, 0.18, 1, 0.62, 0.62, 0.62, 1, 0.62, 0.62, 0.62, 1, 0.18, 0.18, 0.18, 1, 0.18, 0.18, 0.18, 1, 0.3, 0.3, 0.3, 1, 0.3, 0.3, 0.3, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_p3_rough"]
+gradient = SubResource("Gradient_p3_rough")
+width = 128
+height = 8
+
+[sub_resource type="Gradient" id="Gradient_p3_emit"]
+offsets = PackedFloat32Array(0, 0.058, 0.062, 0.088, 0.092, 0.326, 0.332, 0.338, 0.662, 0.668, 0.674, 0.908, 0.912, 0.938, 0.942, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1, 0.22, 0.95, 0.58, 1, 0.22, 0.95, 0.58, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.38, 0.24, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.38, 0.24, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22, 0.95, 0.58, 1, 0.22, 0.95, 0.58, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_p3_emit"]
+gradient = SubResource("Gradient_p3_emit")
+width = 256
+height = 8
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t3wof"]
-albedo_color = Color(0.3683634, 0.79895073, 0.4435502, 1)
+albedo_color = Color(0.96, 1, 0.98, 1)
+albedo_texture = SubResource("GradientTexture2D_p3_albedo")
+metallic = 0.24
+metallic_specular = 0.68
+roughness = 0.82
+roughness_texture = SubResource("GradientTexture2D_p3_rough")
+emission_enabled = true
+emission = Color(0.2, 0.88, 0.52, 1)
+emission_energy_multiplier = 0.8
+emission_operator = 1
+emission_texture = SubResource("GradientTexture2D_p3_emit")
+normal_enabled = true
+normal_scale = 0.9
+normal_texture = SubResource("GradientTexture2D_p3_norm")
+ao_enabled = true
+ao_light_affect = 0.65
+ao_texture = SubResource("GradientTexture2D_p3_ao")
+detail_enabled = true
+detail_blend_mode = 3
+detail_albedo = SubResource("GradientTexture2D_p3_detail")
+uv1_scale = Vector3(3, 12, 1)
+uv1_offset = Vector3(-1, 0, 0)
 
 [sub_resource type="BoxMesh" id="BoxMesh_l2m7k"]
 material = SubResource("StandardMaterial3D_t3wof")
