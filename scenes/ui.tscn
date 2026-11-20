@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://bj11qwxgfngj6"]
+
+[ext_resource type="Script" uid="uid://cygi3dumkvops" path="res://scripts/ui.gd" id="1_nt7q6"]
+
+[node name="UI" type="Control" unique_id=1125194577]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nt7q6")
+
+[node name="Score_Label" type="Label" parent="." unique_id=1738717237]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -128.0
+offset_right = -76.0
+offset_bottom = 23.0
+grow_horizontal = 0
+scale = Vector2(1.6000049, 2.24)
+text = "Score: "
+
+[node name="Coins_Label" type="Label" parent="." unique_id=1101152944]
+layout_mode = 0
+offset_left = 11.0
+offset_right = 62.0
+offset_bottom = 23.0
+scale = Vector2(1.7199998, 1.88)
+text = "Coins: "
+
+[node name="Panel" type="Panel" parent="." unique_id=1352808361]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.0
+offset_top = -133.0
+offset_right = 163.0
+offset_bottom = 117.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Game_Over_Label" type="Label" parent="Panel" unique_id=729990609]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -43.0
+offset_top = 19.0
+offset_right = 44.0
+offset_bottom = 42.0
+grow_horizontal = 2
+text = "Game Over"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=1443680548]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Retry_Btn" type="Button" parent="Panel/HBoxContainer" unique_id=1971547388]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Retry"
+
+[node name="Quit_Btn" type="Button" parent="Panel/HBoxContainer" unique_id=760343809]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Quit
+"
+
+[connection signal="pressed" from="Panel/HBoxContainer/Retry_Btn" to="." method="_on_retry_btn_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/Quit_Btn" to="." method="_on_quit_btn_pressed"]

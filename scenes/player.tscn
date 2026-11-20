@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://bqj02xyqck824"]
 
+[ext_resource type="Script" uid="uid://cmb5ak7ubkbkk" path="res://scripts/player.gd" id="1_3vyb7"]
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4afsq"]
 
 [sub_resource type="Gradient" id="Gradient_player_suit"]
@@ -32,6 +34,10 @@ clearcoat_roughness = 0.2
 material = SubResource("StandardMaterial3D_player")
 
 [node name="Player" type="CharacterBody3D" unique_id=1513978880 groups=["player"]]
+script = ExtResource("1_3vyb7")
+pos_offset = 2.4
+g = 20.0
+jump_h = 2.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=609981857]
 shape = SubResource("CapsuleShape3D_4afsq")

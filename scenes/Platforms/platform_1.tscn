@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bsvok6tcl1fbr"]
 
 [ext_resource type="Script" uid="uid://d04bikl01n0ki" path="res://scripts/platform.gd" id="1_hcgsd"]
+[ext_resource type="PackedScene" uid="uid://bebl7jt1kxe5v" path="res://scenes/Collectibles/coin.tscn" id="2_ufhbk"]
+[ext_resource type="PackedScene" uid="uid://ctuecekso04fv" path="res://scenes/Obstacles/jump_over_obstacle.tscn" id="3_xa0m3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4afsq"]
 size = Vector3(8, 1, 20)
@@ -20,8 +22,6 @@ colors = PackedColorArray(1, 1, 1, 1, 0.98, 0.98, 0.98, 1, 0.82, 0.82, 0.82, 1, 
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_p1_ao"]
 gradient = SubResource("Gradient_p1_ao")
-width = 64
-height = 64
 fill = 2
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 1)
@@ -37,6 +37,15 @@ width = 16
 height = 128
 fill_to = Vector2(0, 1)
 repeat = 1
+
+[sub_resource type="Gradient" id="Gradient_p1_emit"]
+offsets = PackedFloat32Array(0, 0.058, 0.062, 0.088, 0.092, 0.326, 0.332, 0.338, 0.662, 0.668, 0.674, 0.908, 0.912, 0.938, 0.942, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1, 0.18, 0.88, 1, 1, 0.18, 0.88, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08, 0.34, 0.42, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08, 0.34, 0.42, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18, 0.88, 1, 1, 0.18, 0.88, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_p1_emit"]
+gradient = SubResource("Gradient_p1_emit")
+width = 256
+height = 8
 
 [sub_resource type="Gradient" id="Gradient_p1_norm"]
 offsets = PackedFloat32Array(0, 0.03, 0.055, 0.485, 0.5, 0.515, 0.945, 0.97, 1)
@@ -56,15 +65,6 @@ colors = PackedColorArray(0.3, 0.3, 0.3, 1, 0.3, 0.3, 0.3, 1, 0.18, 0.18, 0.18, 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_p1_rough"]
 gradient = SubResource("Gradient_p1_rough")
 width = 128
-height = 8
-
-[sub_resource type="Gradient" id="Gradient_p1_emit"]
-offsets = PackedFloat32Array(0, 0.058, 0.062, 0.088, 0.092, 0.326, 0.332, 0.338, 0.662, 0.668, 0.674, 0.908, 0.912, 0.938, 0.942, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1, 0.18, 0.88, 1, 1, 0.18, 0.88, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08, 0.34, 0.42, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08, 0.34, 0.42, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18, 0.88, 1, 1, 0.18, 0.88, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_p1_emit"]
-gradient = SubResource("Gradient_p1_emit")
-width = 256
 height = 8
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4afsq"]
@@ -118,5 +118,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Spawn_Trigger" unique_id=1485036938]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0.20000076)
 shape = SubResource("BoxShape3D_y5kva")
+
+[node name="Coin" parent="." unique_id=643535275 instance=ExtResource("2_ufhbk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+
+[node name="Jump_over_obstacle" parent="." unique_id=15055488 instance=ExtResource("3_xa0m3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -5)
 
 [connection signal="body_exited" from="Spawn_Trigger" to="." method="_on_spawn_trigger_body_exited"]

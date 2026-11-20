@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ctuecekso04fv"]
+
+[ext_resource type="Script" uid="uid://da0r7or5qvvmx" path="res://scripts/obstacles.gd" id="1_872w8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4afsq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y5kva"]
+albedo_color = Color(1, 0.13725491, 0.15686275, 1)
+metallic = 0.72
+metallic_specular = 0.4
+roughness = 0.45
+
+[sub_resource type="BoxMesh" id="BoxMesh_4afsq"]
+material = SubResource("StandardMaterial3D_y5kva")
+
+[node name="Jump_over_obstacle" type="Area3D" unique_id=15055488 groups=["obstacles"]]
+script = ExtResource("1_872w8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1103160296]
+shape = SubResource("BoxShape3D_4afsq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2068802867]
+mesh = SubResource("BoxMesh_4afsq")
